@@ -1,58 +1,90 @@
-*{
-    margin: 0;
-    padding: 0;
+* {
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
-nav{
-    background-color: #F2E8CF;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
+input {
+    border: solid 1px black;
+  padding-left: 8px;
+  height: 25px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+#search-button {
+  cursor: pointer;
+  font-size: 20px;
+  height: 25px;
+  width: 25px;
+}
+nav {
+  background-color: #f2e8cf;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
 }
 
-body{
-    background-color: #A7C957;
+body {
+  background-color: #a7c957;
 }
 
-main{
-    margin-top: 20px;
-    background-color: #A7C957;
+main {
+  margin-top: 20px;
+  background-color: #a7c957;
 }
 
-#characters-list{
-
-    display: grid;
-    grid-template-columns: repeat(5, 1fr); /* Задаем 5 столбцов */
-    gap: 10px; /* Расстояние между элементами (по желанию) */
-
+#characters-list {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 10px;
 }
 
-.character{
-    border-radius: 20px;
-    margin-left: 20px;
+.character {
+  color: aliceblue;
+  border-radius: 20px;
+  margin-left: 20px;
+  background-color: #386641;
+
+  min-width: 100px;
+  width: 200px;
+  height: 240px;
+}
+
+.character img {
+  margin-left: 12.5%;
+  margin-right: 12.5%;
+
+  max-width: 75%;
+  max-height: 75%;
+}
+
+.character p {
+  text-align: center;
+  padding: 10px;
+}
+.character button {
+  cursor: pointer;
+
+  border: none;
+  box-shadow: 2px 3px black;
+  padding: 1px;
+  border-radius: 5px;
+  background-color: #a9d3e9;
+  margin-left: 10%;
+  margin-right: 10%;
+  margin-top: 4px;
+  width: 80%;
+}
+
+#show-more{
+
+    border: none;
+  box-shadow: 2px 3px black;
+
+    border-radius: 10px;
+    margin-top: 10px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 20px;
     background-color: #386641;
-
-    min-width: 100px;
-    width: 200px;
-    height: 225px;
-}
-
-
-.character img{
-
-    margin-left: 12.5%;
-    margin-right: 12.5%;
-
-    max-width: 75%; 
-    max-height: 75%;
-}
-
-.character p{
-   text-align: center;
-}
-.character button{
-    margin-left: 10%;
-    margin-right: 10%;
-    margin-top: 4px;
-    width: 80%;
 }

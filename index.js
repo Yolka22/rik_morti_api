@@ -22,12 +22,10 @@ const Delete = (id) => {
   document.getElementById("character" + id).remove();
   localStorage.removeItem("character" + id);
 
-  const filteredArr = ExistCharactersId.filter((item) => item !== id);
+  const index = ExistCharactersId.indexOf(id);
+  ExistCharactersId.splice(index, 1);
 
   console.log(ExistCharactersId);
-  console.log(filteredArr);
-
-  ExistCharactersId = filteredArr;
 };
 
 const IsAlreadyExist = (id) => {
@@ -76,15 +74,17 @@ const MakeCharacter = async (id) => {
 const Search = async () => {
   let id = InputId.value;
 
-  if (!IsAlreadyExist(id)) {
-    ExistCharactersId.push(id);
-    localStorage.setItem("character" + id, id);
-    const character = await MakeCharacter(id);
-    if (character) {
-      List.appendChild(character);
+  if (id != "") {
+    if (!IsAlreadyExist(id)) {
+      ExistCharactersId.push(id);
+      localStorage.setItem("character" + id, id);
+      const character = await MakeCharacter(id);
+      if (character) {
+        List.appendChild(character);
+      }
+    } else {
+      alert("character already exists");
     }
-  } else {
-    alert("character already exists");
   }
 };
 
@@ -99,7 +99,7 @@ const SHowExisting = async () => {
   }
   NotShowedIDs.splice(0, 5);
 
-  if(NotShowedIDs.length==0){
+  if (NotShowedIDs.length == 0) {
     ShowMore.hidden = true;
   }
 };
@@ -109,5 +109,3 @@ Load();
 document.getElementById("search-button").addEventListener("click", Search);
 ShowMore.addEventListener("click", SHowExisting);
 document.addEventListener("DOMContentLoaded", SHowExisting);
-
-
