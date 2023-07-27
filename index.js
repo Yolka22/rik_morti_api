@@ -42,6 +42,8 @@ const MakeCharacter = async (id) => {
     const response = await fetch(`${CharactersUrl}/${id}`);
     const data = await response.json();
 
+    console.log(data.id)
+
     const character = document.createElement("div");
     const image = document.createElement("img");
     const name = document.createElement("p");
@@ -76,11 +78,12 @@ const Search = async () => {
 
   if (id != "") {
     if (!IsAlreadyExist(id)) {
-      ExistCharactersId.push(id);
-      localStorage.setItem("character" + id, id);
       const character = await MakeCharacter(id);
-      if (character) {
+      if (character.id!="characterundefined") {
+        console.log(character)
         List.appendChild(character);
+        ExistCharactersId.push(id);
+        localStorage.setItem("character" + id, id);
       }
     } else {
       alert("character already exists");
