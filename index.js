@@ -89,6 +89,8 @@ const Search = async () => {
         List.appendChild(character);
         ExistCharactersId.push(id);
         localStorage.setItem("character" + id, id);
+      }else{
+        alert("character not found")
       }
     } else {
       alert("character already exists");
@@ -108,11 +110,7 @@ const ShowExisting = async () => {
   }
   NotShowedIDs.splice(0, 5);
 
-  if (NotShowedIDs.length == 0) {
-    ShowMore.hidden = true;
-  }else{
-    ShowMore.hidden = false;
-  }
+
 };
 
 // Call the Load function on page load to initialize the character list
@@ -122,3 +120,4 @@ Load();
 document.getElementById("search-button").addEventListener("click", Search);
 ShowMore.addEventListener("click", ShowExisting);
 document.addEventListener("DOMContentLoaded", ShowExisting);
+
