@@ -5,7 +5,6 @@ const CharactersUrl = "https://rickandmortyapi.com/api/character";
 const InputId = document.getElementById("input-id");
 const List = document.getElementById("characters-list");
 const ShowMore = document.getElementById("show-more");
-
 // Arrays to store existing character IDs and IDs of characters not yet shown
 let ExistCharactersId = [];
 let NotShowedIDs = [];
