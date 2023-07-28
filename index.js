@@ -110,6 +110,8 @@ const ShowExisting = async () => {
 
   if (NotShowedIDs.length == 0) {
     ShowMore.hidden = true;
+  }else{
+    ShowMore.hidden = false;
   }
 };
 
